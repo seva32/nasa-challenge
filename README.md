@@ -1,3 +1,7 @@
+### NASA Challenge
+
+This project lets you expore shots from NASA rovers on Mars.
+
 ## Available Scripts
 
 In the project directory, you can run:
