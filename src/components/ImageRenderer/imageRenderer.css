@@ -1,0 +1,27 @@
+.image-container {
+  background-color: rgb(241, 241, 241);
+  /* overflow: hidden; */
+  position: relative;
+  /* max-width: 400px; */
+  margin: 20px auto;
+}
+.image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  position: absolute;
+  opacity: 0;
+}
+.image.thumb {
+  opacity: 1;
+  filter: blur(10px);
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+}
+.image.thumb.isLoaded {
+  opacity: 0;
+}
+.image.isLoaded {
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+}
