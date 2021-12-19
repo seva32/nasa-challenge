@@ -1,4 +1,8 @@
 import ErrorBoundary from "./ErrorBoundary";
-import ImageRenderer from "./ImageRenderer";
+import ImageGrid from "./ImageRenderer";
+import Card from "./Card";
 
-export { ErrorBoundary, ImageRenderer };
+import { Pics } from "./ImageRenderer/ImageGrid";
+
+export { ErrorBoundary, ImageGrid, Card };
+export type { Pics };

@@ -2,24 +2,23 @@ import React from "react";
 
 import "./imageModal.css";
 
-interface ImageModal {
+interface IImageModal {
   isOpen: boolean;
   onClick: any;
   src: string;
 }
 
-const ImageModal = ({ isOpen, onClick, src }: ImageModal) => {
+const ImageModal = ({ isOpen, onClick, src }: IImageModal) => {
   return isOpen ? (
     <div className="modal-overlay">
       <div className="modal-body">
         <div className="close-modal">
-          <a
+          <button
             className="modal-close"
-            href="#"
             onClick={() => onClick((prev: boolean) => !prev)}
           >
             <span>X</span>
-          </a>
+          </button>
         </div>
         <div className="image-container-modal">
           <img
@@ -33,6 +32,7 @@ const ImageModal = ({ isOpen, onClick, src }: ImageModal) => {
               padding: "10px",
               backgroundColor: "ghostwhite",
             }}
+            alt="rover on mars"
           />
         </div>
       </div>

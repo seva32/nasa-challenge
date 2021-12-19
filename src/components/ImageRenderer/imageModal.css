@@ -25,10 +25,13 @@
   z-index: 99;
   color: #eee;
   transition: all 0.25s ease-in-out;
+  border: none;
+  background: none;
 }
 .modal-close:focus,
 .modal-close:hover {
   color: rgb(21, 78, 235);
+  cursor: pointer;
 }
 .rotate-container {
   font-size: 44px;
