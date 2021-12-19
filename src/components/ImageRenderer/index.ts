@@ -1,1 +1,1 @@
-export { default } from './ImageRenderer';
+export { default } from './ImageGrid';

@@ -3,7 +3,7 @@ import { useIntersection } from "../../hooks/useIntersection";
 import ImageModal from "./ImageModal";
 import "./imageRenderer.css";
 
-interface ImageRenderer {
+interface IImageRenderer {
   url: string;
   thumb: any;
   aspectRatio: number;
@@ -17,7 +17,7 @@ const ImageRenderer = ({
   aspectRatio,
   setSelectedImg,
   id,
-}: ImageRenderer) => {
+}: IImageRenderer) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const [openModal, setOpenModal] = useState<boolean>(false);

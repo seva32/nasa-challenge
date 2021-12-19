@@ -1,64 +1,89 @@
-import React, { ReactElement, useEffect, useState } from "react";
+import React, { ReactElement, useRef, useLayoutEffect } from "react";
+import { Link } from "react-router-dom";
 
-import { useAppSelector, useAppDispatch } from "../store/store";
-import { selectNasaData } from "../store/reducers/nasaDataReducer";
-import { NasaDataActionTypes } from "../store/actions/nasaDataActions";
-import { ImageRenderer } from "../components";
+import { Card } from "../components";
 
 import "./landing.css";
 
-interface Pics {
-  id: number;
-  url: string;
-  thumbnail: string;
-  aspectRatio: number;
-}
+import { ReactComponent as Hero } from "../assets/Hero.svg";
+import { ReactComponent as ExploreWith } from "../assets/ExploreWith.svg";
+import Curiosity from "../assets/curiosity.jpg";
+import Opportunity from "../assets/opportunity.jpg";
+import Spirit from "../assets/spirit.jpg";
+import CurText from "../assets/cur-copy.png";
+import OppoText from "../assets/oppo-copy.png";
+import SpiText from "../assets/spi-copy.png";
 
-interface Props {}
+function Landing(): ReactElement {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
-function Landing({}: Props): ReactElement {
-  const [showPics, setShowPics] = useState<Pics[]>([]);
-  const [selectedImg, setSelectedImg] = useState<number>(0);
-  const { photos, isFetching, error } = useAppSelector(selectNasaData);
-  const dispatch = useAppDispatch();
-  useEffect(() => {
-    if (!photos || !photos?.length) {
-      dispatch({ type: NasaDataActionTypes.GET_NASA_DATA });
+  useLayoutEffect(() => {
+    const hero = document.querySelector(".main .hero-img");
+    if (hero && heroRef.current) {
+      setTimeout(() => {
+        if (heroRef.current) {
+          Object.assign(heroRef.current.style, {
+            maxHeight: "200px",
+          });
+        }
+      }, 1000);
+      setTimeout(() => {
+        if (contentRef.current) {
+          Object.assign(contentRef.current.style, {
+            display: "flex",
+            opacity: 1,
+            minHeight: "calc(100vh - 3em - 200px)",
+          });
+        }
+      }, 2200);
     }
-    if (photos.length) {
-      const pics = [];
-      for (let i = 0; i < 25; i++)
-        pics.push({
-          id: photos[i].id,
-          url: photos[i].img_src,
-          thumbnail: photos[i].img_src,
-          aspectRatio: 1,
-        });
-      setShowPics(pics);
-    }
-  }, [photos, dispatch]);
-  console.log(photos?.[0]);
+  }, []);
+
   return (
-    <div className="image-container">
-      {showPics.length &&
-        showPics.map((data, idx) => (
-          <div
-            style={{
-              zIndex: `${selectedImg === data.id ? 1 : 0}`,
-              position: "relative",
-            }}
-            className={idx === showPics.length - 1 ? "last-item" : ""}
-          >
-            <ImageRenderer
-              key={`${data.id}`}
-              url={data.url}
-              thumb={data.thumbnail}
-              aspectRatio={data.aspectRatio}
-              setSelectedImg={setSelectedImg}
-              id={data.id}
+    <div className="main">
+      <div className="hero-img" ref={heroRef}>
+        <Hero />
+      </div>
+      <div className="content" ref={contentRef}>
+        <div className="explore">
+          <ExploreWith />
+        </div>
+        <div className="cards-container">
+          <Card width={"32.5%"}>
+            <Link to="curiosity" style={{ padding: 0, margin: 0 }}>
+              <img className="floating-text" src={CurText} />
+              <figure>
+                <img src={Curiosity}></img>
+              </figure>
+            </Link>
+          </Card>
+          <Card width={"32.5%"}>
+            <img
+              className="floating-text"
+              src={OppoText}
+              style={{ transform: "scale(1.2)", left: "20%", bottom: 0 }}
             />
-          </div>
-        ))}
+            <figure>
+              <img src={Opportunity}></img>
+            </figure>
+          </Card>
+          <Card width={"32.5%"}>
+            <img
+              className="floating-text"
+              src={SpiText}
+              style={{
+                transform: "scale(0.85)",
+                right: "-2.5em",
+                padding: "0.5em",
+              }}
+            />
+            <figure>
+              <img src={Spirit}></img>
+            </figure>
+          </Card>
+        </div>
+      </div>
     </div>
   );
 }
