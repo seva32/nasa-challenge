@@ -5,6 +5,8 @@ import { selectNasaData } from "../store/reducers/nasaDataReducer";
 import { NasaDataActionTypes } from "../store/actions/nasaDataActions";
 import { ImageRenderer } from "../components";
 
+import "./landing.css";
+
 interface Pics {
   id: number;
   url: string;
@@ -16,6 +18,7 @@ interface Props {}
 
 function Landing({}: Props): ReactElement {
   const [showPics, setShowPics] = useState<Pics[]>([]);
+  const [selectedImg, setSelectedImg] = useState<number>(0);
   const { photos, isFetching, error } = useAppSelector(selectNasaData);
   const dispatch = useAppDispatch();
   useEffect(() => {
@@ -36,15 +39,25 @@ function Landing({}: Props): ReactElement {
   }, [photos, dispatch]);
   console.log(photos?.[0]);
   return (
-    <div>
+    <div className="image-container">
       {showPics.length &&
-        showPics.map((data) => (
-          <ImageRenderer
-            key={data.id}
-            url={data.url}
-            thumb={data.thumbnail}
-            aspectRatio={data.aspectRatio}
-          />
+        showPics.map((data, idx) => (
+          <div
+            style={{
+              zIndex: `${selectedImg === data.id ? 1 : 0}`,
+              position: "relative",
+            }}
+            className={idx === showPics.length - 1 ? "last-item" : ""}
+          >
+            <ImageRenderer
+              key={`${data.id}`}
+              url={data.url}
+              thumb={data.thumbnail}
+              aspectRatio={data.aspectRatio}
+              setSelectedImg={setSelectedImg}
+              id={data.id}
+            />
+          </div>
         ))}
     </div>
   );
