@@ -19,7 +19,6 @@ let observer: Observer;
 
 function handleIntersections(entries: Entry[]) {
     entries.forEach(entry => {
-        console.log(entry);
         if (listenerCallbacks.has(entry.target)) {
             let cb = listenerCallbacks.get(entry.target);
 
