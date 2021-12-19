@@ -69,18 +69,21 @@ function Landing(): ReactElement {
             </figure>
           </Card>
           <Card width={"32.5%"}>
-            <img
-              className="floating-text"
-              src={SpiText}
-              style={{
-                transform: "scale(0.85)",
-                right: "-2.5em",
-                padding: "0.5em",
-              }}
-            />
-            <figure>
-              <img src={Spirit}></img>
-            </figure>
+            <Link to="spirit" style={{ padding: 0, margin: 0 }}>
+              <img
+                className="floating-text"
+                src={SpiText}
+                style={{
+                  transform: "scale(0.85)",
+                  right: "-2.5em",
+                  padding: "0.5em",
+                  maxHeight: "10px",
+                }}
+              />
+              <figure>
+                <img src={Spirit}></img>
+              </figure>
+            </Link>
           </Card>
         </div>
       </div>

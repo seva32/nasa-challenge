@@ -4,6 +4,7 @@ import {
   getNasaDataPending,
   getNasaDataSuccess,
   getNasaDataFailure,
+  clearNasaData,
 } from '../actions/nasaDataActions';
 import { RootState } from '../store';
 
@@ -56,6 +57,9 @@ const nasaDataReducer = createReducer(initialState, (builder) =>
     .addCase(getNasaDataFailure, (state, { payload }) => {
       state.isFetching = false;
       state.error = payload.error;
+    })
+    .addCase(clearNasaData, (state) => {
+      state = initialState;
     })
 );
 

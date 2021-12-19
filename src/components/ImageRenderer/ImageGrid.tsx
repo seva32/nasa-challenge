@@ -34,7 +34,11 @@ function ImageGrid({ images }: Props): ReactElement {
               zIndex: `${selectedImg === data.id ? 1 : 0}`,
               position: "relative",
             }}
-            className={idx === showPics.length - 1 ? "last-item" : ""}
+            className={
+              idx === showPics.length - 1 && showPics.length % 2 !== 0
+                ? "last-item"
+                : ""
+            }
             key={`${data.id}`}
           >
             <ImageRenderer

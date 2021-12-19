@@ -22,6 +22,7 @@ export function* getNasaDataSaga(action: any) {
   try {
     const response: ResponseGenerator<GetNasaResponse> = yield call(
       getNasaData,
+      action.payload,
     );
     yield put({ type: GET_NASA_DATA_SUCCESS, payload: response.data });
   } catch (error) {
