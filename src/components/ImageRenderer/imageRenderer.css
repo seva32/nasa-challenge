@@ -1,0 +1,51 @@
+.figure-container {
+  display: flex;
+  z-index: 0;
+}
+.figure {
+  position: relative;
+  flex: 1;
+  z-index: 0;
+}
+.image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  opacity: 0;
+}
+.image.thumb {
+  opacity: 1;
+  filter: blur(10px);
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+}
+.image.thumb.isLoaded {
+  opacity: 0;
+}
+.image.isLoaded {
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+  min-height: 100%;
+  object-fit: contain;
+  z-index: 2;
+}
+/* .figure-container:hover {
+  z-index: 1;
+  position: fixed;
+  min-width: 80vw;
+} */
+.card-icon-open {
+  display: block;
+  position: absolute;
+  width: 30px;
+  color: rgb(21, 78, 235);
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  top: 1em;
+  right: 0.5em;
+  z-index: 2;
+}
+.card-icon-open:focus,
+.card-icon-open:hover {
+  color: #111;
+}

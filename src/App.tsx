@@ -5,9 +5,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { AppRouter } from "./components/AppRouter";
 import { ApplicationState, configureAppStore } from "./store/store";
 import { initialState as initialNasaData } from "./store/reducers/nasaDataReducer";
-import { ErrorBoundary } from "./components/ErrorBoundary";
-
-import getNasaData from "./api/getNasaData";
+import { ErrorBoundary } from "./components";
 
 const initialState: ApplicationState = {
   nasaData: initialNasaData,

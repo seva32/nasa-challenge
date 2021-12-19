@@ -1,23 +1,20 @@
-import React, { FC, Suspense, useEffect, lazy } from "react";
+import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 
-import Landing from "../container/Landing";
-
-type AppRouterProps = {};
+const Landing = lazy(() => import("../container/Landing"));
 
 const Loading = () => {
-  return <div>Loading...</div>;
+  return <div>Loading page...</div>;
 };
 
-const AppRouter: FC<AppRouterProps> = () => {
+function AppRouter(): JSX.Element {
   return (
     <Suspense fallback={<Loading />}>
       <Routes>
         <Route path={"/"} element={<Landing />}></Route>
-        {/* <Route path="/users/:id" element={<div>Children</div>} /> */}
       </Routes>
     </Suspense>
   );
-};
+}
 
 export { AppRouter };

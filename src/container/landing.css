@@ -1,0 +1,31 @@
+.image-container {
+  background-color: rgb(241, 241, 241);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  position: relative;
+  z-index: 1;
+  place-items: center;
+}
+
+.last-item {
+  grid-column: 1 / -1;
+  padding: 0 0;
+}
+
+@media (min-width: 614px) {
+  .last-item {
+    padding: 0 25%;
+  }
+}
+
+@media (min-width: 914px) {
+  .last-item {
+    padding: 0 33.3%;
+  }
+}
+
+@media (min-width: 1214px) {
+  .last-item {
+    padding: 0 37.5%;
+  }
+}
