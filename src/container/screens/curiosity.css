@@ -5,6 +5,7 @@
 .site-logo {
   width: 20%;
   align-self: center;
+  min-width: 250px;
 }
 .site-logo svg {
   max-width: 100%;
