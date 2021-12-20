@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunknasa_challenge=self.webpackChunknasa_challenge||[]).push([[388],{6388:function(a,e,n){n.r(e);n(2791);var c=n(5753),s=n(270),r=n(184),t=["FHAZ","RHAZ","NAVCAM","PANCAM","MINITES"];e.default=function(){return(0,r.jsx)(c.FW,{roverTextImg:s,roverName:"spirit",camerasAvailable:t})}},270:function(a,e,n){a.exports=n.p+"static/media/spi-copy.6fdc2b4c3519a208aaed.png"}}]);
+//# sourceMappingURL=388.18e83fae.chunk.js.map

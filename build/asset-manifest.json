@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.72064a7b.css",
+    "main.js": "/static/js/main.5fe0a1f5.js",
+    "static/css/143.752f35e3.chunk.css": "/static/css/143.752f35e3.chunk.css",
+    "static/js/143.8d47e808.chunk.js": "/static/js/143.8d47e808.chunk.js",
+    "static/js/806.3d0617fb.chunk.js": "/static/js/806.3d0617fb.chunk.js",
+    "static/js/388.18e83fae.chunk.js": "/static/js/388.18e83fae.chunk.js",
+    "static/js/214.4e96d64b.chunk.js": "/static/js/214.4e96d64b.chunk.js",
+    "static/media/curiosity.jpg": "/static/media/curiosity.adad038fa9d08258f502.jpg",
+    "static/media/opportunity.jpg": "/static/media/opportunity.2a89fec5ccfe197fe7ce.jpg",
+    "static/media/oppo-copy.png": "/static/media/oppo-copy.a4dc8022ddd2dc7b6436.png",
+    "static/media/spirit.jpg": "/static/media/spirit.9b8f99d0199e51665ee4.jpg",
+    "static/media/cur-copy.png": "/static/media/cur-copy.2aa6ebcbdaa47676ec16.png",
+    "static/media/spi-copy.png": "/static/media/spi-copy.6fdc2b4c3519a208aaed.png",
+    "static/media/Hero.svg": "/static/media/Hero.8c84734e9c6a4af90220ead10078adf1.svg",
+    "static/media/ExploreWith.svg": "/static/media/ExploreWith.26991da47322965b7084412010ee5ecd.svg",
+    "index.html": "/index.html",
+    "main.72064a7b.css.map": "/static/css/main.72064a7b.css.map",
+    "main.5fe0a1f5.js.map": "/static/js/main.5fe0a1f5.js.map",
+    "143.752f35e3.chunk.css.map": "/static/css/143.752f35e3.chunk.css.map",
+    "143.8d47e808.chunk.js.map": "/static/js/143.8d47e808.chunk.js.map",
+    "806.3d0617fb.chunk.js.map": "/static/js/806.3d0617fb.chunk.js.map",
+    "388.18e83fae.chunk.js.map": "/static/js/388.18e83fae.chunk.js.map",
+    "214.4e96d64b.chunk.js.map": "/static/js/214.4e96d64b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.72064a7b.css",
+    "static/js/main.5fe0a1f5.js"
+  ]
+}

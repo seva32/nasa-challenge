@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunknasa_challenge=self.webpackChunknasa_challenge||[]).push([[214],{3214:function(e,a,n){n.r(a);n(2791);var c=n(5753),t=n(703),r=n(184),o=["FHAZ","RHAZ","NAVCAM","PANCAM","MINITES"];a.default=function(){return(0,r.jsx)(c.FW,{roverTextImg:t,roverName:"opportunity",camerasAvailable:o})}},703:function(e,a,n){e.exports=n.p+"static/media/oppo-copy.a4dc8022ddd2dc7b6436.png"}}]);
+//# sourceMappingURL=214.4e96d64b.chunk.js.map

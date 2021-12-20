@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunknasa_challenge=self.webpackChunknasa_challenge||[]).push([[806],{4806:function(a,e,c){c.r(e);c(2791);var n=c(5753),r=c(1660),s=c(184),t=["FHAZ","RHAZ","MAST","CHEMCAM","MAHLI","MARDI","NAVCAM"];e.default=function(){return(0,s.jsx)(n.FW,{roverTextImg:r,roverName:"curiosity",camerasAvailable:t})}},1660:function(a,e,c){a.exports=c.p+"static/media/cur-copy.2aa6ebcbdaa47676ec16.png"}}]);
+//# sourceMappingURL=806.3d0617fb.chunk.js.map
