@@ -1,5 +1,6 @@
 import React, { ReactElement, useRef, useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
+import dayjs from "dayjs";
 
 import { Card } from "../components";
 
@@ -76,8 +77,7 @@ function Landing(): ReactElement {
                 style={{
                   transform: "scale(0.85)",
                   right: "-2.5em",
-                  padding: "0.5em",
-                  maxHeight: "10px",
+                  padding: "0.8em",
                 }}
               />
               <figure>

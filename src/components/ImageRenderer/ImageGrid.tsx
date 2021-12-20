@@ -9,6 +9,7 @@ export type Pics = {
   url: string;
   thumbnail: string;
   aspectRatio: number;
+  camera?: string;
 };
 
 interface Props {
@@ -16,7 +17,7 @@ interface Props {
 }
 
 function ImageGrid({ images }: Props): ReactElement {
-  const [showPics, setShowPics] = useState<Pics[]>(images);
+  const [showPics, setShowPics] = useState<Pics[]>([]);
   const [selectedImg, setSelectedImg] = useState<number>(0);
 
   useEffect(() => {
@@ -33,6 +34,7 @@ function ImageGrid({ images }: Props): ReactElement {
             style={{
               zIndex: `${selectedImg === data.id ? 1 : 0}`,
               position: "relative",
+              minHeight: "300px",
             }}
             className={
               idx === showPics.length - 1 && showPics.length % 2 !== 0

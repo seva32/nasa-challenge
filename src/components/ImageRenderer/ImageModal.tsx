@@ -6,9 +6,10 @@ interface IImageModal {
   isOpen: boolean;
   onClick: any;
   src: string;
+  children?: any;
 }
 
-const ImageModal = ({ isOpen, onClick, src }: IImageModal) => {
+const ImageModal = ({ isOpen, onClick, src, children = null }: IImageModal) => {
   return isOpen ? (
     <div className="modal-overlay">
       <div className="modal-body">
@@ -21,6 +22,7 @@ const ImageModal = ({ isOpen, onClick, src }: IImageModal) => {
           </button>
         </div>
         <div className="image-container-modal">
+          {children}
           <img
             src={src}
             style={{

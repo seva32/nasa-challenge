@@ -1,23 +1,39 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { usePagination, DOTS } from "../../hooks/usePagination";
 
 import "./pagination.css";
 
-const Pagination = (props: any) => {
-  const {
-    onPageChange,
-    totalCount,
-    siblingCount = 1,
-    currentPage,
-    pageSize,
-    className,
-  } = props;
+interface IPagination {
+  onPageChange: any;
+  totalCount: number;
+  siblingCount?: number;
+  currentPage: number;
+  pageSize: number;
+  className: string;
+}
 
+const Pagination = ({
+  onPageChange,
+  totalCount,
+  siblingCount = 1,
+  currentPage,
+  pageSize,
+  className,
+}: IPagination) => {
   const paginationRange = usePagination({
     currentPage,
     totalCount,
     siblingCount,
     pageSize,
+  });
+
+  useEffect(() => {
+    return () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    };
   });
 
   if (
@@ -36,18 +52,27 @@ const Pagination = (props: any) => {
   };
 
   let lastPage = paginationRange?.[paginationRange.length - 1];
+
   return (
     <ul className={`pagination-container ${className}`}>
       <li
         className={`pagination-item ${currentPage === 1 ? "disabled" : ""}`}
         onClick={onPrevious}
+        key={`${Math.random() * 10000}`}
       >
         <div className="arrow left" />
       </li>
       {paginationRange?.length &&
         paginationRange.map((pageNumber) => {
           if (pageNumber === DOTS) {
-            return <li className="pagination-item dots">&#8230;</li>;
+            return (
+              <li
+                className="pagination-item dots"
+                key={`${Math.random() * 10000}`}
+              >
+                &#8230;
+              </li>
+            );
           }
 
           return (
@@ -56,6 +81,7 @@ const Pagination = (props: any) => {
                 pageNumber === currentPage ? "selected" : ""
               }`}
               onClick={() => onPageChange(pageNumber)}
+              key={`${Math.random() * 10000}`}
             >
               {pageNumber}
             </li>
@@ -66,6 +92,7 @@ const Pagination = (props: any) => {
           currentPage === lastPage ? "disabled" : ""
         }`}
         onClick={onNext}
+        key={`${Math.random() * 10000}`}
       >
         <div className="arrow right" />
       </li>

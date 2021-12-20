@@ -25,7 +25,8 @@ export function* getNasaDataSaga(action: any) {
       action.payload,
     );
     yield put({ type: GET_NASA_DATA_SUCCESS, payload: response.data });
-  } catch (error) {
+  } catch (error: any) {
+    console.error(error.message);
     yield put({ type: GET_NASA_DATA_FAILURE });
   }
 }
