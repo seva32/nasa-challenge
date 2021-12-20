@@ -18,7 +18,6 @@ const { GET_NASA_DATA, GET_NASA_DATA_FAILURE, GET_NASA_DATA_PENDING, GET_NASA_DA
  * @param {Object} payload - The request object
  */
 export function* getNasaDataSaga(action: any) {
-  console.log(action.payload);
   yield put({ type: GET_NASA_DATA_PENDING });
   try {
     const response: ResponseGenerator<GetNasaResponse> = yield call(
@@ -26,7 +25,8 @@ export function* getNasaDataSaga(action: any) {
       action.payload,
     );
     yield put({ type: GET_NASA_DATA_SUCCESS, payload: response.data });
-  } catch (error) {
+  } catch (error: any) {
+    console.error(error.message);
     yield put({ type: GET_NASA_DATA_FAILURE });
   }
 }

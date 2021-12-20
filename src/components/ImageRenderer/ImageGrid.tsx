@@ -9,6 +9,7 @@ export type Pics = {
   url: string;
   thumbnail: string;
   aspectRatio: number;
+  camera?: string;
 };
 
 interface Props {

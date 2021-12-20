@@ -54,7 +54,7 @@ const nasaDataReducer = createReducer(initialState, (builder) =>
       state.photos = payload.photos;
       state.error = '';
     })
-    .addCase(getNasaDataFailure, (state) => {
+    .addCase(getNasaDataFailure, (state, action) => {
       state.isFetching = false;
       state.error = "Error loading data.";
     })

@@ -52,6 +52,7 @@ const Pagination = ({
   };
 
   let lastPage = paginationRange?.[paginationRange.length - 1];
+
   return (
     <ul className={`pagination-container ${className}`}>
       <li
