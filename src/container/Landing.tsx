@@ -1,6 +1,5 @@
 import React, { ReactElement, useRef, useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
-import dayjs from "dayjs";
 
 import { Card } from "../components";
 
@@ -53,21 +52,28 @@ function Landing(): ReactElement {
         <div className="cards-container">
           <Card width={"32.5%"}>
             <Link to="curiosity" style={{ padding: 0, margin: 0 }}>
-              <img className="floating-text" src={CurText} />
+              <img
+                className="floating-text"
+                src={CurText}
+                alt="text curiosity"
+              />
               <figure>
-                <img src={Curiosity}></img>
+                <img src={Curiosity} alt="text curiosity"></img>
               </figure>
             </Link>
           </Card>
           <Card width={"32.5%"}>
-            <img
-              className="floating-text"
-              src={OppoText}
-              style={{ transform: "scale(1.2)", left: "20%", bottom: 0 }}
-            />
-            <figure>
-              <img src={Opportunity}></img>
-            </figure>
+            <Link to="opportunity" style={{ padding: 0, margin: 0 }}>
+              <img
+                className="floating-text"
+                src={OppoText}
+                style={{ transform: "scale(1.2)", left: "20%", bottom: 0 }}
+                alt="text curiosity"
+              />
+              <figure>
+                <img src={Opportunity} alt="text curiosity"></img>
+              </figure>
+            </Link>
           </Card>
           <Card width={"32.5%"}>
             <Link to="spirit" style={{ padding: 0, margin: 0 }}>
@@ -79,9 +85,10 @@ function Landing(): ReactElement {
                   right: "-2.5em",
                   padding: "0.8em",
                 }}
+                alt="text curiosity"
               />
               <figure>
-                <img src={Spirit}></img>
+                <img src={Spirit} alt="text curiosity"></img>
               </figure>
             </Link>
           </Card>
