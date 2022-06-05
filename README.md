@@ -32,3 +32,19 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### `yarn eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+## Features
+
+TS
+
+CRA
+
+Figure tags (lazy loading img)
+
+Error Boundary
+
+Pagination
+
+useIntersection
+
+Redux Saga
