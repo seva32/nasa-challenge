@@ -1,16 +1,18 @@
-import { call, put, takeLatest } from 'redux-saga/effects';
-import { ResponseGenerator } from '../../../utils/common';
-
-import { NasaDataActionTypes } from '../../actions/nasaDataActions';
-
-import getNasaData from '../../../api/getNasaData';
+import { call, put, takeLatest } from "redux-saga/effects";
+import { ResponseGenerator } from "../../../utils/common";
+import { NasaDataActionTypes } from "../../actions/nasaDataActions";
+import getNasaData from "../../../api/getNasaData";
 
 interface GetNasaResponse {
   data: any;
 }
 
-const { GET_NASA_DATA, GET_NASA_DATA_FAILURE, GET_NASA_DATA_PENDING, GET_NASA_DATA_SUCCESS } =
-  NasaDataActionTypes;
+const {
+  GET_NASA_DATA,
+  GET_NASA_DATA_FAILURE,
+  GET_NASA_DATA_PENDING,
+  GET_NASA_DATA_SUCCESS,
+} = NasaDataActionTypes;
 
 /**
  * Fetches NasaData via NasaDataService - Emits pending state, fetches data with request body
@@ -23,11 +25,14 @@ export function* getNasaDataSaga(action: any) {
   try {
     const response: ResponseGenerator<GetNasaResponse> = yield call(
       getNasaData,
-      action.payload,
+      action.payload
     );
     yield put({ type: GET_NASA_DATA_SUCCESS, payload: response.data });
   } catch (error) {
-    yield put({ type: GET_NASA_DATA_FAILURE });
+    yield put({
+      type: GET_NASA_DATA_FAILURE,
+      payload: "Error loading photos.",
+    });
   }
 }
 
